@@ -1,13 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Recipes from "@/components/Recipes/Recipes";
-import RecipeDetail from "@/components/Recipes/RecipeDetail";
+import Recipes from "./components/Recipes/Recipes";
+import RecipeDetail from "./components/Recipes/RecipeDetail";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: process.env.BASE_URL,
+  //base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
@@ -36,7 +36,8 @@ export default new Router({
     {
       path: "/Recipe/:id",
       name: "RecipeDetail",
-      component: RecipeDetail
+      component: RecipeDetail,
+      props: true
     },
     {
       path: "*",

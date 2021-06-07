@@ -21,14 +21,5 @@
 <script>
 export default {
   name: "RecipeDetail",
-  props: {
-    item: {
-      type: Object,
-      default: () => {},
-    },
-  },
-  data() {
-    return {};
-  },
 };
 </script>

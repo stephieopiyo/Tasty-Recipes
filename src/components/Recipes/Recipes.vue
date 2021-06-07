@@ -2,17 +2,17 @@
   <div class="container">
     <div class="recipes-container">
       <div v-for="item in items" :key="item.idMeal" class="col-md-3 mt-2">
-        <a href="" target="_blank">
+        <router-link
+          :to="{ name: 'RecipeDetail', params: { id: item.idMeal } }"
+        >
           <img :src="item.strMealThumb" width="100%" alt="item.strMeal" />
-        </a>
+        </router-link>
         <h5 class="card-title">{{ item.strMeal }}</h5>
       </div>
     </div>
-    <RecipeDetail></RecipeDetail>
   </div>
 </template>
 <script>
-import RecipeDetail from "./RecipeDetail";
 export default {
   name: "Recipes",
   data() {
@@ -20,13 +20,10 @@ export default {
       items: [],
     };
   },
-  components: {
-    RecipeDetail,
-  },
 
-  created() {
+  mounted() {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese")
+      .get("https://www.themealdb.com/api/json/v1/1/filter.php?a=American")
       .then((response) => {
         console.log(response.data);
         this.items = response.data.meals;

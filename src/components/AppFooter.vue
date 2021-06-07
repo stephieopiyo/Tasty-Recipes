@@ -4,27 +4,43 @@
       <div class="col-md-3">
         <h6>QUICK LINKS</h6>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Recipes</a></li>
+          <li>
+            <router-link :to="{ name: 'Home' }" class="nav-link"
+              >Home</router-link
+            >
+          </li>
+          <li>
+            <router-link :to="{ name: 'About' }" class="nav-link"
+              >About</router-link
+            >
+          </li>
+          <li>
+            <router-link :to="{ name: 'Contact' }" class="nav-link"
+              >Contact</router-link
+            >
+          </li>
+          <li>
+            <router-link :to="{ name: 'Recipes' }" class="nav-link"
+              >Recipes</router-link
+            >
+          </li>
         </ul>
       </div>
       <div class="col-md-3">
         <h6>Contact Us</h6>
-        <ul>
-          <li>info@tastyrecipes.com</li>
-          <li>tastyrecipes@gmail.com</li>
-          <li>+254713 164 677</li>
-          <li>+254 739 712 770</li>
+        <ul class="contact">
+          <li><i class="fa fa-envelope fa-fw"></i>info@tastyrecipes.com</li>
+          <li><i class="fa fa-envelope fa-fw"></i>tastyrecipes@gmail.com</li>
+          <li><i class="fa fa-phone fa-fw"></i>+254713 164 677</li>
+          <li><i class="fa fa-phone fa-fw"></i>+254 739 712 770</li>
         </ul>
       </div>
       <div class="col-md-3">
         <h6>Address</h6>
         <address>
+          <p>Tasty Recipes</p>
           <p>P.O Box 12345-00100</p>
-          <p>Nairobi</p>
-          <p>Kenya</p>
+          <p>Nairobi, Kenya</p>
         </address>
       </div>
       <div class="col-md-3">

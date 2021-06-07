@@ -23,24 +23,24 @@ body {
 }
 
 .bgimg {
-  margin-top: 0;
+  margin-bottom: 10px;
   background-color: #696969;
-  background-image: url("~@/assets/img/recipe.jpg");
+  background-image: url("src/assets/img/recipe.jpg");
   background-position: center;
-  height: 430px;
+  height: 50vh;
   background-size: cover;
   position: relative;
 }
 
-
+.srch {
   position: absolute;
-  top: 150px;
-  left: 250px;
-  width: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {
-  font-weight: bol
+  font-weight: bold;
   margin: 10px 0;
   padding: 20px;
   text-align: center;
@@ -99,7 +99,7 @@ h3 {
 
 .bgrnd {
   background-color: #ccc;
-  background-image: url("~@/assets/img/error404.jpg");
+  background-image: url("src/assets/img/error404.jpg");
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -139,6 +139,7 @@ ul li:hover {
 .contact,
 address p {
   font-size: 20px;
+  color: #ccc;
 }
 
 .contact ul li {

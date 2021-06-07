@@ -15,38 +15,25 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Recipes</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
+          <router-link :to="{ name: 'Home' }" class="nav-link"
+            >Home</router-link
           >
-            Cuisine</a
+        </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'About' }" class="nav-link"
+            >About</router-link
           >
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">American</a>
-            <a class="dropdown-item" href="#">British</a>
-            <a class="dropdown-item" href="#">Canadian</a>
-            <a class="dropdown-item" href="#">French</a>
-            <a class="dropdown-item" href="#">Indian</a>
-            <a class="dropdown-item" href="#">Italian</a>
-          </div>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'Contact' }" class="nav-link"
+            >Contact us</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'Recipes' }" class="nav-link"
+            >Recipes</router-link
+          >
         </li>
       </ul>
     </div>
@@ -57,3 +44,4 @@ export default {
   name: "AppNav",
 };
 </script>
+
