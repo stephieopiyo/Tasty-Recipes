@@ -1,9 +1,10 @@
 <template>
   <div class="container-fluid">
-    <div class="bgimg">
+    <div class="bgimg" v-bind:style="recipeImage">
+      >
       <form class="form-inline my-2 my-lg-0 srch">
         <input
-          v-model = "search"
+          v-model="search"
           class="form-control form-control-lg mr-sm-2"
           type="search"
           placeholder="Find a Recipe"
@@ -11,7 +12,7 @@
         />
         <button
           @click="searchRecipe"
-          class="btn btn-lg btn-outline-success my-2 my-sm-0 searchbtn"
+          class="btn btn-lg btn-success my-2 my-sm-0 searchbtn"
           type="submit"
         >
           <i class="fa fa-search"></i>
@@ -23,16 +24,23 @@
 <script>
 export default {
   name: "Home",
-  data(){
+  data() {
     return {
-      search: ""
-    }
+      search: "",
+    };
   },
   methods: {
-    searchRecipe() {
-      
-    }
-  }
+    searchRecipe() {},
+  },
+  computed: {
+    recipeImage() {
+      return {
+        backgroundImage: `url(${require("../assets/img/recipe.jpg")})`,
+      };
+    },
+  },
 };
 </script>
+
+
 

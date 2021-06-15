@@ -1,12 +1,20 @@
 <template>
-  <div class="container">
-    <div class="bgrnd"></div>
-    <div class="error">404 OOPS SORRY ,SOMETHING WENT WRONG.</div>
+  <div class="container-fluid">
+    <div class="bgrnd" v-bind:style="errorImage">
+      <div class="error">OOPS SORRY 404,PAGE NOT FOUND.</div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   name: "PageNotFound",
+  computed: {
+    errorImage() {
+      return {
+        backgroundImage: `url(${require("../assets/img/error404.jpg")})`,
+      };
+    },
+  },
 };
 </script>
 
