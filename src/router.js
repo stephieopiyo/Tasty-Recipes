@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Home from "./views/Home";
 import Recipes from "./components/Recipes/Recipes";
 import RecipeDetail from "./components/Recipes/RecipeDetail";
 
@@ -16,17 +17,17 @@ export default new Router({
     {
       path: "/Home",
       name: "Home",
-      component: () => import("./views/Home.vue")
+      component: Home
     },
     {
       path: "/About",
       name: "About",
-      component: () => import("./views/About.vue")
+      component: () => import(/* webpackChunkName: "about" */"./views/About.vue")
     },
     {
       path: "/Contact",
       name: "Contact",
-      component: () => import("./views/Contact.vue")
+      component: () => import(/* webpackChunkName: "contact" */"./views/Contact.vue")
     },
     {
       path: "/Recipes",
@@ -40,8 +41,9 @@ export default new Router({
       props: true
     },
     {
-      path: "*",
-      component: () => import("./views/PageNotFound.vue")
+      path: "/404",
+      alias: "*",
+      component: PageNotFound
     }
   ]
 });
