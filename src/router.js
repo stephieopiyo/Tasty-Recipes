@@ -1,14 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home";
-import Recipes from "./components/Recipes/Recipes";
-import RecipeDetail from "./components/Recipes/RecipeDetail";
+import PageNotFound from "./views/PageNotFound";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  //base: process.env.BASE_URL,
+  base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
@@ -32,13 +31,13 @@ export default new Router({
     {
       path: "/Recipes",
       name: "Recipes",
-      component: Recipes
+      component:  () => import(/* webpackChunkName: "recipes" */"./components/Recipes/Recipes")
     },
     {
       path: "/Recipe/:id",
       name: "RecipeDetail",
-      component: RecipeDetail,
-      props: true
+      props: true,
+      component: () => import(/* webpackChunkName: "recipes" */"./components/Recipes/RecipeDetail")
     },
     {
       path: "/404",
