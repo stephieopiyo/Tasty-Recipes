@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid">
     <div class="bgimg" v-bind:style="recipeImage">
-      >
       <form class="form-inline my-2 my-lg-0 srch">
         <input
           v-model="search"
@@ -19,6 +18,16 @@
         </button>
       </form>
     </div>
+    <h2 class="categories-title">Categories</h2>
+    <!--<div class="categories">
+      <div
+        class="category"
+        v-for="category of categories"
+        :key="category.strCategory"
+      >
+        {{ category.strCategory }}
+      </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -26,11 +35,21 @@ export default {
   name: "Home",
   data() {
     return {
+      categories: [],
       search: "",
     };
   },
   methods: {
     searchRecipe() {},
+  },
+  mounted() {
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
+      .then((response) => {
+        //console.log(response.data);
+        this.categories = response.data.meals;
+      })
+      .catch((error) => console.log(error));
   },
   computed: {
     recipeImage() {

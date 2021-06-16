@@ -1,7 +1,11 @@
 <template>
   <div class="container-fluid">
-    <div class="bgrnd" v-bind:style="errorImage">
-      <div class="error">OOPS SORRY 404,PAGE NOT FOUND.</div>
+    <div class="bgrnd" v:bind="errorImage">
+      <div class="error">
+        <div><i class="fa fa-exclamation-triangle"></i></div>
+        <div>404</div>
+        <div>PAGE NOT FOUND.</div>
+      </div>
     </div>
   </div>
 </template>
