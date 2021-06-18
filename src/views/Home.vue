@@ -30,102 +30,119 @@
         </div>
       </div>
     </div>-->
-    <div class="search-results hide">
-      <div class="h1 text-center">{{ searchResult.strMeal }}</div>
+    <div class="search-results" v-for="item of searchResult" :key="item.idMeal">
+      <div class="h1 text-center">{{ item.strMeal }}</div>
       <div class="row">
-        <div class="col-md-8">
-          <img :src="searchResult.strMealThumb" alt="item.strMeal" />
+        <div class="col-md-5 searchImg">
+          <img
+            width="100%"
+            :src="item.strMealThumb"
+            alt="searchResult.strMeal"
+          />
         </div>
-        <div class="col-md-8">
-          <p>Cuisine: {{ searchResult.strArea }}</p>
-          <p>Meal Category{{ searchResult.strCategory }}</p>
+        <div class="col-md-6">
+          <p class="area">Cuisine: {{ item.strArea }}</p>
+          <p class="meal-category">Meal Category: {{ item.strCategory }}</p>
+          <p class="source">
+            Source: <a href="item.strSource">{{ item.strSource }}</a>
+          </p>
+          <p class="yt-video">
+            Video: <a href="item.strYoutube">{{ item.strYoutube }}</a>
+          </p>
+          <p class="tags">Tags: {{ item.strTags }}</p>
         </div>
       </div>
+      <hr />
+      <div class="h2 text-center">Ingredients</div>
       <div class="row">
-        <div class="h2 text-center">Ingredients</div>
-        <div class="col-md-8">
-          <ol>
-            <li>{{ searchResult.strIngredient1 }}</li>
-            <li>{{ searchResult.strIngredient2 }}</li>
-            <li>{{ searchResult.strIngredient3 }}</li>
-            <li>{{ searchResult.strIngredient4 }}</li>
-            <li>{{ searchResult.strIngredient5 }}</li>
-            <li>{{ searchResult.strIngredient6 }}</li>
-            <li>{{ searchResult.strIngredient7 }}</li>
-            <li>{{ searchResult.strIngredient8 }}</li>
-            <li>{{ searchResult.strIngredient9 }}</li>
-            <li>{{ searchResult.strIngredient10 }}</li>
-          </ol>
+        <div class="col-md-4">
+          <ul class="ingredients-list">
+            <li>{{ item.strIngredient1 }}</li>
+            <li>{{ item.strIngredient2 }}</li>
+            <li>{{ item.strIngredient3 }}</li>
+            <li>{{ item.strIngredient4 }}</li>
+            <li>{{ item.strIngredient5 }}</li>
+            <li>{{ item.strIngredient6 }}</li>
+            <li>{{ item.strIngredient7 }}</li>
+          </ul>
         </div>
-        <div class="col-md-8">
-          <ol>
-            <li>{{ searchResult.strIngredient11 }}</li>
-            <li>{{ searchResult.strIngredient12 }}</li>
-            <li>{{ searchResult.strIngredient13 }}</li>
-            <li>{{ searchResult.strIngredient14 }}</li>
-            <li>{{ searchResult.strIngredient15 }}</li>
-            <li>{{ searchResult.strIngredient16 }}</li>
-            <li>{{ searchResult.strIngredient17 }}</li>
-            <li>{{ searchResult.strIngredient18 }}</li>
-            <li>{{ searchResult.strIngredient19 }}</li>
-            <li>{{ searchResult.strIngredient20 }}</li>
-          </ol>
+        <div class="col-md-4">
+          <ul cclass="ingredients-list">
+            <li>{{ item.strIngredient8 }}</li>
+            <li>{{ item.strIngredient9 }}</li>
+            <li>{{ item.strIngredient10 }}</li>
+            <li>{{ item.strIngredient11 }}</li>
+            <li>{{ item.strIngredient12 }}</li>
+            <li>{{ item.strIngredient13 }}</li>
+            <li>{{ item.strIngredient14 }}</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="ingredients-list">
+            <li>{{ item.strIngredient15 }}</li>
+            <li>{{ item.strIngredient16 }}</li>
+            <li>{{ item.strIngredient17 }}</li>
+            <li>{{ item.strIngredient18 }}</li>
+            <li>{{ item.strIngredient19 }}</li>
+            <li>{{ item.strIngredient20 }}</li>
+          </ul>
         </div>
       </div>
-      <div class="h3 text-center">
-        Instructions
-        <p>{{ searchResult.strInstructions }}</p>
-      </div>
+      <hr />
+      <div class="h3 text-center">Instructions</div>
+      <p>{{ item.strInstructions }}</p>
+      <div class="h4 text-center">Measurement</div>
       <div class="row">
-        <div class="h4 text-center">Measurement</div>
         <div class="col-md-3">
-          <ol>
-            <li>{{ searchResult.strMeasure1 }}</li>
-            <li>{{ searchResult.strMeasure2 }}</li>
-            <li>{{ searchResult.strMeasure3 }}</li>
-            <li>{{ searchResult.strMeasure4 }}</li>
-            <li>{{ searchResult.strMeasure5 }}</li>
-          </ol>
+          <ul class="measure">
+            <li>{{ item.strMeasure1 }}</li>
+            <li>{{ item.strMeasure2 }}</li>
+            <li>{{ item.strMeasure3 }}</li>
+            <li>{{ item.strMeasure4 }}</li>
+            <li>{{ item.strMeasure5 }}</li>
+          </ul>
         </div>
         <div class="col-md-3">
-          <ol>
-            <li>{{ searchResult.strMeasure6 }}</li>
-            <li>{{ searchResult.strMeasure7 }}</li>
-            <li>{{ searchResult.strMeasure8 }}</li>
-            <li>{{ searchResult.strMeasure9 }}</li>
-            <li>{{ searchResult.strMeasure10 }}</li>
-          </ol>
+          <ul class="measure">
+            <li>{{ item.strMeasure6 }}</li>
+            <li>{{ item.strMeasure7 }}</li>
+            <li>{{ item.strMeasure8 }}</li>
+            <li>{{ item.strMeasure9 }}</li>
+            <li>{{ item.strMeasure10 }}</li>
+          </ul>
         </div>
         <div class="col-md-3">
-          <ol>
-            <li>{{ searchResult.strMeasure11 }}</li>
-            <li>{{ searchResult.strMeasure12 }}</li>
-            <li>{{ searchResult.strMeasure13 }}</li>
-            <li>{{ searchResult.strMeasure14 }}</li>
-            <li>{{ searchResult.strMeasure15 }}</li>
-          </ol>
+          <ul class="measure">
+            <li>{{ item.strMeasure11 }}</li>
+            <li>{{ item.strMeasure12 }}</li>
+            <li>{{ item.strMeasure13 }}</li>
+            <li>{{ item.strMeasure14 }}</li>
+            <li>{{ item.strMeasure15 }}</li>
+          </ul>
         </div>
         <div class="col-md-3">
-          <ol>
-            <li>{{ searchResult.strMeasure16 }}</li>
-            <li>{{ searchResult.strMeasure17 }}</li>
-            <li>{{ searchResult.strMeasure18 }}</li>
-            <li>{{ searchResult.strMeasure19 }}</li>
-            <li>{{ searchResult.strMeasure20 }}</li>
-          </ol>
+          <ul class="measure">
+            <li>{{ item.strMeasure16 }}</li>
+            <li>{{ item.strMeasure17 }}</li>
+            <li>{{ item.strMeasure18 }}</li>
+            <li>{{ item.strMeasure19 }}</li>
+            <li>{{ item.strMeasure20 }}</li>
+          </ul>
         </div>
       </div>
+      <hr />
     </div>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "Home",
   data() {
     return {
-      searchResult: [],
       categories: [],
       searchKeyword: this.$route.query.searchKeyword,
+      searchResult: [],
     };
   },
   watch: {
@@ -150,7 +167,7 @@ export default {
           `https://www.themealdb.com/api/json/v1/1/search.php?s=${this.searchKeyword}`
         )
         .then((response) => {
-          console.log(response.data);
+          console.log(response.data.meals);
           this.searchResult = response.data.meals;
         })
         .catch((error) => console.log(error));
@@ -167,7 +184,6 @@ export default {
       .then((response) => {
         //console.log(response.data);
         this.categories = response.data.meals;
-        document.querySelector("hide").style = "block";
       })
       .catch((error) => console.log(error));
   },
@@ -180,11 +196,7 @@ export default {
   },
 };
 </script>
-<style scoped>
-.hide {
-  display: none;
-}
-</style>
+
 
 
 
