@@ -30,7 +30,11 @@
         </div>
       </div>
     </div>-->
-    <div class="search-results" v-for="item of searchResult" :key="item.idMeal">
+    <div
+      class="container search-results"
+      v-for="item of searchResult"
+      :key="item.idMeal"
+    >
       <div class="h1 text-center">{{ item.strMeal }}</div>
       <div class="row">
         <div class="col-md-5 searchImg">
@@ -67,7 +71,7 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <ul cclass="ingredients-list">
+          <ul class="ingredients-list">
             <li>{{ item.strIngredient8 }}</li>
             <li>{{ item.strIngredient9 }}</li>
             <li>{{ item.strIngredient10 }}</li>

@@ -295,7 +295,7 @@ export default {
       ])
       .then(
         axios.spread((...responses) => {
-          console.log(responses);
+          //console.log(responses);
           this.americanItems = responses[0].data.meals;
           this.britishItems = responses[1].data.meals;
           this.canadianItems = responses[2].data.meals;
