@@ -95,6 +95,7 @@
       <hr />
       <div class="h3 text-center">Instructions</div>
       <p>{{ item.strInstructions }}</p>
+      <hr />
       <div class="h4 text-center">Measurement</div>
       <div class="row">
         <div class="col-md-3">

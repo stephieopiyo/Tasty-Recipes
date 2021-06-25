@@ -4,7 +4,7 @@ import Home from "./views/Home";
 import PageNotFound from "./views/PageNotFound";
 
 Vue.use(Router);
-
+const parseProps = (r) => ({ id: parseInt(r.params.id) });
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -21,23 +21,29 @@ export default new Router({
     {
       path: "/About",
       name: "About",
-      component: () => import(/* webpackChunkName: "about" */"./views/About.vue")
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
       path: "/Contact",
       name: "Contact",
-      component: () => import(/* webpackChunkName: "contact" */"./views/Contact.vue")
+      component: () =>
+        import(/* webpackChunkName: "contact" */ "./views/Contact.vue")
     },
     {
       path: "/Recipes",
       name: "Recipes",
-      component:  () => import(/* webpackChunkName: "recipes" */"./components/Recipes/Recipes")
+      component: () =>
+        import(/* webpackChunkName: "recipes" */ "./components/Recipes/Recipes")
     },
     {
-      path: "/Recipe/:id",
+      path: "/Recipes/:id",
       name: "RecipeDetail",
-      props: true,
-      component: () => import(/* webpackChunkName: "recipes" */"./components/Recipes/RecipeDetail")
+      props: parseProps,
+      component: () =>
+        import(
+          /* webpackChunkName: "recipes" */ "./components/Recipes/RecipeDetail"
+        )
     },
     {
       path: "/404",
