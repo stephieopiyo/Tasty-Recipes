@@ -18,18 +18,6 @@
         </button>
       </form>
     </div>
-    <!--<div class="meal-categories">
-      <h2 class="categories-title">Categories</h2>
-      <div class="categories">
-        <div
-          class="category"
-          v-for="category of categories"
-          :key="category.strCategory"
-        >
-          {{ category.strCategory }}
-        </div>
-      </div>
-    </div>-->
     <div
       class="container search-results"
       v-for="item of searchResult"
@@ -137,15 +125,19 @@
       </div>
       <hr />
     </div>
+    <Categories></Categories>
   </div>
 </template>
 <script>
 import axios from "axios";
+import Categories from "/src/components/Categories";
 export default {
   name: "Home",
+  components: {
+    Categories,
+  },
   data() {
     return {
-      categories: [],
       searchKeyword: this.$route.query.searchKeyword,
       searchResult: [],
     };
@@ -172,7 +164,7 @@ export default {
           `https://www.themealdb.com/api/json/v1/1/search.php?s=${this.searchKeyword}`
         )
         .then((response) => {
-          console.log(response.data.meals);
+          //console.log(response.data.meals);
           this.searchResult = response.data.meals;
         })
         .catch((error) => console.log(error));
@@ -182,15 +174,6 @@ export default {
     if (this.searchKeyword != null) {
       this.searchRecipe();
     }
-  },
-  mounted() {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
-      .then((response) => {
-        //console.log(response.data);
-        this.categories = response.data.meals;
-      })
-      .catch((error) => console.log(error));
   },
   computed: {
     recipeImage() {
