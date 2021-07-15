@@ -11,7 +11,7 @@
           <div class="category-img">
             <img
               width="100%"
-              src="category.strCategoryThumb"
+              :src="category.strCategoryThumb"
               alt="category.strCategory"
             />
           </div>
