@@ -126,15 +126,19 @@
       <hr />
     </div>
     <Categories></Categories>
+    <hr />
+    <Latest></Latest>
   </div>
 </template>
 <script>
 import axios from "axios";
 import Categories from "/src/components/Categories";
+import Latest from "/src/components/Latest";
 export default {
   name: "Home",
   components: {
     Categories,
+    Latest,
   },
   data() {
     return {

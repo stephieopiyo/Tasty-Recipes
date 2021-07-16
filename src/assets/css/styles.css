@@ -59,11 +59,12 @@ h3 {
   padding: 10px;
 }
 
-.categories-title {
+.categories-title,
+.latest-title {
   color: rgb(241, 188, 90);
 }
 
-.categories {
+.categories .latest-meals {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
