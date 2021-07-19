@@ -133,7 +133,7 @@
 <script>
 import axios from "axios";
 import Categories from "/src/components/Categories";
-import Latest from "/src/components/Latest";
+import Latest from "/src/components/Latest/Latest";
 export default {
   name: "Home",
   components: {

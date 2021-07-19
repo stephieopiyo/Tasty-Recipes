@@ -128,7 +128,7 @@ export default {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => {
-        console.log(response.data.meals);
+        //console.log(response.data.meals);
         this.results = response.data.meals;
       })
       .catch((error) => console.log(error));
