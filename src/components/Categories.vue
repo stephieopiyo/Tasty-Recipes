@@ -34,7 +34,7 @@ export default {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/categories.php")
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         this.categories = response.data.categories;
       })
       .catch((error) => console.log(error));
